@@ -26,7 +26,7 @@ let package = Package(
       publicHeadersPath: "Source",
       linkerSettings: [
         .linkedFramework("Security"),
-        .linkedFramework("UIKit"),
+        .linkedFramework("UIKit", .when(platforms: [.iOS, .tvOS])),
       ]),
   ]
 )
