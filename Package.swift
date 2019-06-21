@@ -19,11 +19,14 @@ let package = Package(
     .target(
       name: "GTMSessionFetcher_Core",
       path: "Source",
-      sources: ["GTMSessionFetcher.m", "GTMSessionFetcher.h", "GTMSessionFetcherLogging.m",
+      sources: ["GTMSessionFetcher.m", "GTMSessionFetcherLogging.m",
                 "GTMSessionFetcherLogging.h", "GTMSessionFetcherService.m",
-                "GTMSessionFetcherService.h", "GTMSessionUploadFetcher.m",
+                "GTMSessionUploadFetcher.m",
                 "GTMSessionUploadFetcher.h"],
-      publicHeadersPath: "Source",
+      publicHeadersPath: "Public",
+      cSettings: [
+        .headerSearchPath("$(SRCROOT)/Public"),
+      ],
       linkerSettings: [
         .linkedFramework("Security"),
         .linkedFramework("UIKit", .when(platforms: [.iOS, .tvOS])),
