@@ -24,6 +24,9 @@ let package = Package(
                 "GTMSessionFetcherService.h", "GTMSessionUploadFetcher.m",
                 "GTMSessionUploadFetcher.h"],
       publicHeadersPath: "Source",
+      cSettings: [
+        .headerSearchPath("Source"),
+      ],
       linkerSettings: [
         .linkedFramework("Security"),
         .linkedFramework("UIKit", .when(platforms: [.iOS, .tvOS])),
