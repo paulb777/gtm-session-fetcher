@@ -23,10 +23,13 @@ let package = Package(
                 "GTMSessionFetcherLogging.h", "GTMSessionFetcherService.m",
                 "GTMSessionFetcherService.h", "GTMSessionUploadFetcher.m",
                 "GTMSessionUploadFetcher.h"],
-      publicHeadersPath: ".",
+      publicHeadersPath: "Public",
 //      cSettings: [
 //        .headerSearchPath("./"),  // Necessary to populate dependencies `Header Search Paths`
 //      ],
+      cSettings: [
+        .headerSearchPath("Public"),
+      ],
       linkerSettings: [
         .linkedFramework("Security"),
         .linkedFramework("UIKit", .when(platforms: [.iOS, .tvOS])),
