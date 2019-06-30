@@ -24,12 +24,6 @@ let package = Package(
                 "GTMSessionFetcherService.h", "GTMSessionUploadFetcher.m",
                 "GTMSessionUploadFetcher.h"],
       publicHeadersPath: "Public",
-//      cSettings: [
-//        .headerSearchPath("./"),  // Necessary to populate dependencies `Header Search Paths`
-//      ],
-      cSettings: [
-        .headerSearchPath("Public"),
-      ],
       linkerSettings: [
         .linkedFramework("Security"),
         .linkedFramework("UIKit", .when(platforms: [.iOS, .tvOS])),
